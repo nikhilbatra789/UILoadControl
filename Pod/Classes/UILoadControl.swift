@@ -90,7 +90,7 @@ extension UILoadControl {
     
     let contentOffSetBottom = max(0, ((scrollView.contentOffset.y + scrollView.frame.size.height) - scrollView.contentSize.height))
     if (contentOffSetBottom >= 0 && !loading) || (contentOffSetBottom >= heightLimit && loading) {
-      self.updateFrame(CGRect(x: 0.0, y: scrollView.contentSize.height, width: scrollView.frame.size.width, height: contentOffSetBottom))
+      self.updateFrame(CGRect(x: 0.0, y: scrollView.contentSize.height - 20, width: scrollView.frame.size.width, height: contentOffSetBottom))
     }
   }
   
@@ -105,7 +105,7 @@ extension UILoadControl {
     superview.frame = rect
     frame = superview.bounds
     activityIndicatorView.alpha = (((frame.size.height * 100) / heightLimit) / 100)
-    activityIndicatorView.center = CGPoint(x: (frame.size.width / 2), y: (frame.size.height / 2))
+    activityIndicatorView.center = CGPoint(x: (frame.size.width / 2), y: (frame.size.height / 4))
   }
   
   /*
